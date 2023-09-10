@@ -5,8 +5,8 @@ $(".members .member_image").each(function (index) {
       method: "GET",
       dataType: "json",
     })
-      .done(function (response) {
-        let data = JSON.stringify(response);
+      .done(function (res) {
+        let data = res;
         console.log("data1", data);
         //   $(this).attr("src", thumbnailUrl);
       })
@@ -28,8 +28,8 @@ $(".articles .article_image").each(function (index) {
       method: "GET",
       dataType: "json",
     })
-      .done(function (response) {
-        let data = JSON.stringify(response);
+      .done(function (res) {
+        let data = res;
         console.log("data2", data);
         //   $(this).attr("src", thumbnailUrl);
       })
@@ -50,8 +50,8 @@ $(".articles .article_text").each(async function (index) {
     method: "GET",
     dataType: "json",
   })
-    .done(function (response) {
-      let data = JSON.stringify(response);
+    .done(function (res) {
+      let data = res;
       console.log("data3", data);
       //   if (body.length > 50) body = body.substring(0, 50) + "...";
       //   $(this).text(body);
