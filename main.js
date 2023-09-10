@@ -7,11 +7,6 @@ const _supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 );
 
-console.log(
-  "env",
-  process.env.NEXT_PUBLIC_SUPABASE_URL,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-);
 console.log("supabase", _supabase);
 
 // $(".members .member_image").each(function (index) {
