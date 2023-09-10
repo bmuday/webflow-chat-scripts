@@ -18,6 +18,7 @@ $(document).ready(function () {
       });
     console.log("this1", this);
     const { thumbnailUrl } = data.responseJSON;
+    console.log("url", thumbnailUrl);
     $(this).attr("src", thumbnailUrl);
   });
 
@@ -40,6 +41,7 @@ $(document).ready(function () {
       });
     console.log("this2", this);
     const { thumbnailUrl } = data.responseJSON;
+    console.log("url", thumbnailUrl);
     $(this).attr("src", thumbnailUrl);
   });
 
@@ -63,6 +65,7 @@ $(document).ready(function () {
     console.log("this3", this);
     const { body } = data.responseJSON;
     if (body.length > 20) body = body.substring(0, 20) + "...";
+    console.log("body", body);
     $(this).text(body);
   });
 });
