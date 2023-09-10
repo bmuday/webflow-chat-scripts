@@ -49,7 +49,7 @@ $(document).ready(function () {
     .done(function (data) {
       console.log("data3", data);
       $(".articles .article_text").each(function (index) {
-        const { body } = data[index];
+        let { body } = data[index];
         if (body.length > 20) body = body.substring(0, 20) + "...";
         console.log("body", body);
         console.log("this", $(this));
