@@ -1,5 +1,4 @@
 import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
-import $ from "https://code.jquery.com/jquery-3.7.1.min.js";
 
 const supabase = createClient(
   "https://bkfjctowhklpuqpamybu.supabase.co",
