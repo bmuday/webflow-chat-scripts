@@ -1,5 +1,5 @@
 const { createClient } = supabase;
-import $ from "jquery";
+// import $ from "jquery";
 
 // Create a single supabase client for interacting with your database
 const _supabase = createClient(
@@ -14,6 +14,6 @@ console.log(
 );
 console.log("supabase", _supabase);
 
-$(".members .member_image").each(function (index) {
-  $(this).attr("src", `https://picsum.photos/id/${index}/200`);
-});
+// $(".members .member_image").each(function (index) {
+//   $(this).attr("src", `https://picsum.photos/id/${index}/200`);
+// });
