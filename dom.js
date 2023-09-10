@@ -51,6 +51,8 @@ $(document).ready(function () {
       $(".articles .article_text").each(function (index) {
         const { body } = data[index];
         if (body.length > 20) body = body.substring(0, 20) + "...";
+        console.log("body", body);
+        console.log("this", $(this));
         $(this).text(body);
       });
     })
