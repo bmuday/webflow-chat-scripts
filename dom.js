@@ -6,7 +6,7 @@ $(".members .member_image").each(function (index) {
       dataType: "json",
     })
       .done(function (res) {
-        let data = res;
+        const data = JSON.parse(res);
         console.log("data1", data);
         //   $(this).attr("src", thumbnailUrl);
       })
@@ -29,7 +29,7 @@ $(".articles .article_image").each(function (index) {
       dataType: "json",
     })
       .done(function (res) {
-        let data = res;
+        const data = JSON.parse(res);
         console.log("data2", data);
         //   $(this).attr("src", thumbnailUrl);
       })
@@ -51,7 +51,7 @@ $(".articles .article_text").each(async function (index) {
     dataType: "json",
   })
     .done(function (res) {
-      let data = res;
+      const data = JSON.parse(res);
       console.log("data3", data);
       //   if (body.length > 50) body = body.substring(0, 50) + "...";
       //   $(this).text(body);
