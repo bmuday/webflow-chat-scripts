@@ -10,6 +10,7 @@ $(".members .member_image").each(function (index) {
         console.log("data1", data);
         const { thumbnailUrl } = data;
         console.log("thumbnailUrl", thumbnailUrl);
+        console.log("this1", $(this));
         $(this).attr("src", thumbnailUrl);
       })
       .fail(function (error) {
@@ -35,6 +36,7 @@ $(".articles .article_image").each(function (index) {
         console.log("data2", data);
         const { thumbnailUrl } = data;
         console.log("thumbnailUrl", thumbnailUrl);
+        console.log("this2", $(this));
         $(this).attr("src", thumbnailUrl);
       })
       .fail(function (error) {
@@ -60,6 +62,7 @@ $(".articles .article_text").each(async function (index) {
       let { body } = data;
       console.log("body", body);
       if (body.length > 20) body = body.substring(0, 20) + "...";
+      console.log("this3", $(this));
       $(this).text(body);
     })
     .fail(function (error) {
