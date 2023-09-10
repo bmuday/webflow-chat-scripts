@@ -7,7 +7,8 @@ $(document).ready(function () {
     .done(function (data) {
       console.log("data1", data);
       $(".members .member_image").each(function (index) {
-        // $(this).attr('src', data)
+        const { thumbnailUrl } = data[index];
+        $(this).attr("src", thumbnailUrl);
       });
     })
     .fail(function (error) {
@@ -27,7 +28,8 @@ $(document).ready(function () {
     .done(function (data) {
       console.log("data2", data);
       $(".articles .article_image").each(function (index) {
-        // $(this).attr("src", thumbnailUrl);
+        const { thumbnailUrl } = data[index];
+        $(this).attr("src", thumbnailUrl);
       });
     })
     .fail(function (error) {
@@ -47,8 +49,9 @@ $(document).ready(function () {
     .done(function (data) {
       console.log("data3", data);
       $(".articles .article_text").each(function (index) {
-        // if (body.length > 20) body = body.substring(0, 20) + "...";
-        // $(this).text(body);
+        const { body } = data[index];
+        if (body.length > 20) body = body.substring(0, 20) + "...";
+        $(this).text(body);
       });
     })
     .fail(function (error) {
