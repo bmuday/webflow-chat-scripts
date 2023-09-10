@@ -40,7 +40,7 @@ $(document).ready(function () {
     });
 
   $.ajax({
-    url: `https://jsonplaceholder.typicode.com/posts/${index + 1}`,
+    url: `https://jsonplaceholder.typicode.com/posts`,
     method: "GET",
     dataType: "json",
   })
