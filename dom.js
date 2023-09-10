@@ -19,6 +19,7 @@ $(".members .member_image").each(function (index) {
         console.log("Requête effectuée");
       });
   });
+  console.log("this1", this);
   $(this).attr("src", url);
 });
 
@@ -43,6 +44,7 @@ $(".articles .article_image").each(function (index) {
         console.log("Requête effectuée2");
       });
   });
+  console.log("this2", this);
   $(this).attr("src", url);
 });
 
@@ -66,5 +68,6 @@ $(".articles .article_text").each(async function (index) {
     .always(function () {
       console.log("Requête effectuée3");
     });
+  console.log("this3", this);
   $(this).text(body);
 });
