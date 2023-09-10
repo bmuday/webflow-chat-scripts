@@ -1,12 +1,12 @@
 $(document).ready(function () {
   $(".members .member_image").each(function (index) {
-    const url = $.ajax({
+    const data = $.ajax({
       url: `https://jsonplaceholder.typicode.com/photos/${index + 1}`,
       method: "GET",
       dataType: "json",
     })
       .done(function (data) {
-        return data.responseJSON;
+        return data;
       })
       .fail(function (error) {
         console.log(
@@ -17,18 +17,18 @@ $(document).ready(function () {
         console.log("Requête effectuée");
       });
     console.log("this1", this);
-    console.log("url", url);
-    //   $(this).attr("src", url);
+    const { thumbnailUrl } = data.responseJSON;
+    $(this).attr("src", thumbnailUrl);
   });
 
   $(".articles .article_image").each(function (index) {
-    const url = $.ajax({
+    const data = $.ajax({
       url: `https://jsonplaceholder.typicode.com/photos/${index + 6}`,
       method: "GET",
       dataType: "json",
     })
       .done(function (data) {
-        return data.responseJSON;
+        return data;
       })
       .fail(function (error) {
         console.log(
@@ -39,20 +39,18 @@ $(document).ready(function () {
         console.log("Requête effectuée2");
       });
     console.log("this2", this);
-    console.log("url", url);
-    //   $(this).attr("src", url);
+    const { thumbnailUrl } = data.responseJSON;
+    $(this).attr("src", thumbnailUrl);
   });
 
   $(".articles .article_text").each(function (index) {
-    const body = $.ajax({
+    const data = $.ajax({
       url: `https://jsonplaceholder.typicode.com/posts/${index + 1}`,
       method: "GET",
       dataType: "json",
     })
       .done(function (data) {
-        return data.responseJSON;
-        // if (body.length > 20) body = body.substring(0, 20) + "...";
-        // return data.body;
+        return data;
       })
       .fail(function (error) {
         console.log(
@@ -63,7 +61,8 @@ $(document).ready(function () {
         console.log("Requête effectuée3");
       });
     console.log("this3", this);
-    console.log("body", body);
-    //   $(this).text(body);
+    const { body } = data.responseJSON;
+    if (body.length > 20) body = body.substring(0, 20) + "...";
+    $(this).text(body);
   });
 });
