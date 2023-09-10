@@ -1,5 +1,5 @@
 $(".members .member_image").each(function (index) {
-  const { thumbnailUrl } = $.ajax({
+  const data = $.ajax({
     type: "GET",
     url: `https://jsonplaceholder.typicode.com/photos/${index + 1}`,
     success: function (data) {
@@ -9,11 +9,12 @@ $(".members .member_image").each(function (index) {
       console.log("FAIL....=================", error);
     },
   });
-  $(this).attr("src", thumbnailUrl);
+  console.log("data", data);
+  //   $(this).attr("src", thumbnailUrl);
 });
 
 $(".articles .article_image").each(function (index) {
-  const { thumbnailUrl } = $.ajax({
+  const data = $.ajax({
     type: "GET",
     url: `https://jsonplaceholder.typicode.com/photos/${index + 6}`,
     success: function (data) {
@@ -23,11 +24,12 @@ $(".articles .article_image").each(function (index) {
       console.log("FAIL....=================", error);
     },
   });
-  $(this).attr("src", thumbnailUrl);
+  console.log("data", data);
+  //   $(this).attr("src", thumbnailUrl);
 });
 
 $(".articles .article_text").each(async function (index) {
-  const { body } = $.ajax({
+  const data = $.ajax({
     type: "GET",
     url: `https://jsonplaceholder.typicode.com/posts/${index + 1}`,
     success: function (data) {
@@ -37,6 +39,7 @@ $(".articles .article_text").each(async function (index) {
       console.log("FAIL....=================", error);
     },
   });
-  if (body.length > 50) body = body.substring(0, 50) + "...";
-  $(this).text(post);
+  console.log("data", data);
+  //   if (body.length > 50) body = body.substring(0, 50) + "...";
+  //   $(this).text(body);
 });
