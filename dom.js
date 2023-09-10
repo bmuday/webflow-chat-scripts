@@ -6,8 +6,7 @@ $(document).ready(function () {
       dataType: "json",
     })
       .done(function (res) {
-        const data = res;
-        return data.thumbnailUrl;
+        return res;
       })
       .fail(function (error) {
         console.log(
@@ -29,9 +28,7 @@ $(document).ready(function () {
       dataType: "json",
     })
       .done(function (res) {
-        const data = res;
-        url = data.thumbnailUrl;
-        return url;
+        return res;
       })
       .fail(function (error) {
         console.log(
@@ -46,16 +43,16 @@ $(document).ready(function () {
     //   $(this).attr("src", url);
   });
 
-  $(".articles .article_text").each(async function (index) {
+  $(".articles .article_text").each(function (index) {
     const body = $.ajax({
       url: `https://jsonplaceholder.typicode.com/posts/${index + 1}`,
       method: "GET",
       dataType: "json",
     })
       .done(function (res) {
-        const data = res;
-        if (body.length > 20) body = body.substring(0, 20) + "...";
-        return data.body;
+        return res;
+        // if (body.length > 20) body = body.substring(0, 20) + "...";
+        // return data.body;
       })
       .fail(function (error) {
         console.log(
