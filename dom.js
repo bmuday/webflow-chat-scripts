@@ -6,8 +6,10 @@ $(".members .member_image").each(function (index) {
       dataType: "json",
     })
       .done(function (res) {
-        const { thumbnailUrl } = JSON.parse(res);
+        const data = JSON.parse(res);
         console.log("data1", data);
+        const { thumbnailUrl } = data;
+        console.log("thumbnailUrl", thumbnailUrl);
         $(this).attr("src", thumbnailUrl);
       })
       .fail(function (error) {
@@ -29,8 +31,10 @@ $(".articles .article_image").each(function (index) {
       dataType: "json",
     })
       .done(function (res) {
-        const { thumbnailUrl } = JSON.parse(res);
+        const data = JSON.parse(res);
         console.log("data2", data);
+        const { thumbnailUrl } = data;
+        console.log("thumbnailUrl", thumbnailUrl);
         $(this).attr("src", thumbnailUrl);
       })
       .fail(function (error) {
@@ -51,8 +55,10 @@ $(".articles .article_text").each(async function (index) {
     dataType: "json",
   })
     .done(function (res) {
-      const { body } = JSON.parse(res);
+      const data = JSON.parse(res);
       console.log("data3", data);
+      const { body } = data;
+      console.log("body", body);
       if (body.length > 50) body = body.substring(0, 50) + "...";
       $(this).text(body);
     })
