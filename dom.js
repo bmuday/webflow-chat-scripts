@@ -17,9 +17,9 @@ $(document).ready(function () {
         console.log("Requête effectuée");
       });
     console.log("this1", this);
-    const { thumbnailUrl } = data.responseJSON;
-    console.log("url", thumbnailUrl);
-    $(this).attr("src", thumbnailUrl);
+    const res = data.responseJSON;
+    console.log("url", res);
+    // $(this).attr("src", thumbnailUrl);
   });
 
   $(".articles .article_image").each(function (index) {
@@ -40,9 +40,9 @@ $(document).ready(function () {
         console.log("Requête effectuée2");
       });
     console.log("this2", this);
-    const { thumbnailUrl } = data.responseJSON;
-    console.log("url", thumbnailUrl);
-    $(this).attr("src", thumbnailUrl);
+    const res = data.responseJSON;
+    console.log("url", res);
+    // $(this).attr("src", thumbnailUrl);
   });
 
   $(".articles .article_text").each(function (index) {
@@ -63,9 +63,9 @@ $(document).ready(function () {
         console.log("Requête effectuée3");
       });
     console.log("this3", this);
-    const { body } = data.responseJSON;
-    if (body.length > 20) body = body.substring(0, 20) + "...";
-    console.log("body", body);
-    $(this).text(body);
+    const res = data.responseJSON;
+    // if (body.length > 20) body = body.substring(0, 20) + "...";
+    console.log("body", res);
+    // $(this).text(body);
   });
 });
