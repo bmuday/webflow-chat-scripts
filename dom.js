@@ -13,9 +13,17 @@ $(".articles .article_image").each(function (index) {
 });
 
 $(".articles .article_text").each(async function (index) {
-  const post = await fetch(
-    `https://jsonplaceholder.typicode.com/posts/${index + 1}`
-  );
+  let post;
+  $.ajax({
+    type: "GET",
+    url: `https://jsonplaceholder.typicode.com/photos/${index + 1}`,
+    success: function (data) {
+      post = data;
+    },
+    error: function (error) {
+      console.log("FAIL....=================", error);
+    },
+  });
   if (post.length > 50) post = post.substring(0, 50) + "...";
   $(this).text(post);
 });
