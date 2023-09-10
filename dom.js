@@ -8,9 +8,9 @@ $(".members .member_image").each(function (index) {
       .done(function (res) {
         const data = res;
         console.log("data1", data);
-        // const { thumbnailUrl } = data;
-        // console.log("thumbnailUrl", thumbnailUrl);
-        // $(this).attr("src", thumbnailUrl);
+        const { thumbnailUrl } = data;
+        console.log("thumbnailUrl", thumbnailUrl);
+        $(this).attr("src", thumbnailUrl);
       })
       .fail(function (error) {
         console.log(
@@ -33,9 +33,9 @@ $(".articles .article_image").each(function (index) {
       .done(function (res) {
         const data = res;
         console.log("data2", data);
-        // const { thumbnailUrl } = data;
-        // console.log("thumbnailUrl", thumbnailUrl);
-        // $(this).attr("src", thumbnailUrl);
+        const { thumbnailUrl } = data;
+        console.log("thumbnailUrl", thumbnailUrl);
+        $(this).attr("src", thumbnailUrl);
       })
       .fail(function (error) {
         console.log(
@@ -57,10 +57,10 @@ $(".articles .article_text").each(async function (index) {
     .done(function (res) {
       const data = res;
       console.log("data3", data);
-      //   const { body } = data;
-      //   console.log("body", body);
-      //   if (body.length > 50) body = body.substring(0, 50) + "...";
-      //   $(this).text(body);
+      const { body } = data;
+      console.log("body", body);
+      if (body.length > 20) body = body.substring(0, 20) + "...";
+      $(this).text(body);
     })
     .fail(function (error) {
       console.log(
