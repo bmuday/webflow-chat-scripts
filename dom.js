@@ -57,7 +57,7 @@ $(".articles .article_text").each(async function (index) {
     .done(function (res) {
       const data = res;
       console.log("data3", data);
-      const { body } = data;
+      let { body } = data;
       console.log("body", body);
       if (body.length > 20) body = body.substring(0, 20) + "...";
       $(this).text(body);
