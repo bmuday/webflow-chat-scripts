@@ -5,8 +5,8 @@ $(document).ready(function () {
       method: "GET",
       dataType: "json",
     })
-      .done(function (res) {
-        return res;
+      .done(function (data) {
+        return data.responseJSON;
       })
       .fail(function (error) {
         console.log(
@@ -27,8 +27,8 @@ $(document).ready(function () {
       method: "GET",
       dataType: "json",
     })
-      .done(function (res) {
-        return res;
+      .done(function (data) {
+        return data.responseJSON;
       })
       .fail(function (error) {
         console.log(
@@ -49,8 +49,8 @@ $(document).ready(function () {
       method: "GET",
       dataType: "json",
     })
-      .done(function (res) {
-        return res;
+      .done(function (data) {
+        return data.responseJSON;
         // if (body.length > 20) body = body.substring(0, 20) + "...";
         // return data.body;
       })
