@@ -1,4 +1,5 @@
-const { createClient } = require("@supabase/supabase-js");
+import { createClient } from "@supabase/supabase-js";
+import $ from "jquery";
 
 // Create a single supabase client for interacting with your database
 const supabase = createClient(
