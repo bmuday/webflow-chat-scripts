@@ -19,11 +19,12 @@ $(".articles .article_text").each(async function (index) {
     url: `https://jsonplaceholder.typicode.com/photos/${index + 1}`,
     success: function (data) {
       post = data;
+      console.log("post", data);
     },
     error: function (error) {
       console.log("FAIL....=================", error);
     },
   });
-  if (post.length > 50) post = post.substring(0, 50) + "...";
+  //   if (post.length > 50) post = post.substring(0, 50) + "...";
   $(this).text(post);
 });
