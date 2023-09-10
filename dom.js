@@ -7,7 +7,7 @@ $(document).ready(function () {
     })
       .done(function (data) {
         console.log("data1", data);
-        console.log("this1", $this);
+        console.log("this1", $(this));
       })
       .fail(function (error) {
         console.log(
@@ -28,7 +28,7 @@ $(document).ready(function () {
     })
       .done(function (data) {
         console.log("data2", data);
-        console.log("this2", $this);
+        console.log("this2", $(this));
       })
       .fail(function (error) {
         console.log(
@@ -49,7 +49,7 @@ $(document).ready(function () {
     })
       .done(function (data) {
         console.log("data3", data);
-        console.log("this3", $this);
+        console.log("this3", $(this));
       })
       .fail(function (error) {
         console.log(
