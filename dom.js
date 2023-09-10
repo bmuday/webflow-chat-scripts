@@ -1,4 +1,5 @@
 $(".members .member_image").each(function (index) {
+  let url;
   $(document).ready(function () {
     $.ajax({
       url: `https://jsonplaceholder.typicode.com/photos/${index + 1}`,
@@ -7,11 +8,7 @@ $(".members .member_image").each(function (index) {
     })
       .done(function (res) {
         const data = res;
-        console.log("data1", data);
-        const { thumbnailUrl } = data;
-        console.log("thumbnailUrl", thumbnailUrl);
-        console.log("this1", $(this));
-        $(this).attr("src", thumbnailUrl);
+        url = data.thumbnailUrl;
       })
       .fail(function (error) {
         console.log(
@@ -22,9 +19,11 @@ $(".members .member_image").each(function (index) {
         console.log("Requête effectuée");
       });
   });
+  $(this).attr("src", url);
 });
 
 $(".articles .article_image").each(function (index) {
+  let url;
   $(document).ready(function () {
     $.ajax({
       url: `https://jsonplaceholder.typicode.com/photos/${index + 6}`,
@@ -33,11 +32,7 @@ $(".articles .article_image").each(function (index) {
     })
       .done(function (res) {
         const data = res;
-        console.log("data2", data);
-        const { thumbnailUrl } = data;
-        console.log("thumbnailUrl", thumbnailUrl);
-        console.log("this2", $(this));
-        $(this).attr("src", thumbnailUrl);
+        url = data.thumbnailUrl;
       })
       .fail(function (error) {
         console.log(
@@ -48,9 +43,11 @@ $(".articles .article_image").each(function (index) {
         console.log("Requête effectuée2");
       });
   });
+  $(this).attr("src", url);
 });
 
 $(".articles .article_text").each(async function (index) {
+  let body;
   $.ajax({
     url: `https://jsonplaceholder.typicode.com/posts/${index + 1}`,
     method: "GET",
@@ -58,12 +55,8 @@ $(".articles .article_text").each(async function (index) {
   })
     .done(function (res) {
       const data = res;
-      console.log("data3", data);
-      let { body } = data;
-      console.log("body", body);
+      body = data.body;
       if (body.length > 20) body = body.substring(0, 20) + "...";
-      console.log("this3", $(this));
-      $(this).text(body);
     })
     .fail(function (error) {
       console.log(
@@ -73,4 +66,5 @@ $(".articles .article_text").each(async function (index) {
     .always(function () {
       console.log("Requête effectuée3");
     });
+  $(this).text(body);
 });
