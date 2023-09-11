@@ -28,9 +28,9 @@ $(document).ready(function () {
   $(".register_form").submit(async function (e) {
     e.preventDefault();
 
-    const username = $("#username").val();
-    const email = $("#email").val();
-    const password = $("#password").val();
+    const username = $("#register_username").val();
+    const email = $("#register_email").val();
+    const password = $("#register_password").val();
 
     console.log("values", username, email, password);
 
