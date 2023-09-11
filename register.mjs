@@ -1,3 +1,11 @@
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+
+// Supabase Client
+const supabase = createClient(
+  "https://bkfjctowhklpuqpamybu.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJrZmpjdG93aGtscHVxcGFteWJ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTQzNjk3NDUsImV4cCI6MjAwOTk0NTc0NX0.uwp1Jx7xBQH88JCn8k67nQQE2o-0QnjBAKkwuBLV4j8"
+);
+
 $(document).ready(function () {
   $(".register_input").focus(function () {
     $(this).css("border", "1px solid #1991eb");
@@ -7,10 +15,10 @@ $(document).ready(function () {
     $(this).css("border", "");
   });
 
-  async function createUser() {
+  async function createUser(email, password) {
     const { data, error } = await supabase.auth.signUp({
-      email: "example@email.com",
-      password: "example-password",
+      email,
+      password,
     });
 
     console.log("data", data);
