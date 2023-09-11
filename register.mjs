@@ -21,8 +21,8 @@ $(document).ready(function () {
       password,
     });
 
-    console.log("data", data);
-    console.log("error", error);
+    if (data) window.location = "/";
+    if (error) console.log("error", error);
   }
 
   $(".register_form").submit(async function (e) {

@@ -6,6 +6,12 @@ const supabase = createClient(
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJrZmpjdG93aGtscHVxcGFteWJ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTQzNjk3NDUsImV4cCI6MjAwOTk0NTc0NX0.uwp1Jx7xBQH88JCn8k67nQQE2o-0QnjBAKkwuBLV4j8"
 );
 
+async function checkSession() {
+  const { data, error } = await supabase.auth.getSession();
+  console.log("data", data);
+  console.log("error", error);
+}
+
 // jQuery
 $(document).ready(function () {
   $.ajax({
@@ -24,9 +30,6 @@ $(document).ready(function () {
       console.log(
         "La requête s'est terminée en échec. Infos : " + JSON.stringify(error)
       );
-    })
-    .always(function () {
-      console.log("Requête effectuée2");
     });
 
   $.ajax({
@@ -45,9 +48,6 @@ $(document).ready(function () {
       console.log(
         "La requête s'est terminée en échec. Infos : " + JSON.stringify(error)
       );
-    })
-    .always(function () {
-      console.log("Requête effectuée2");
     });
 
   $.ajax({
@@ -69,8 +69,7 @@ $(document).ready(function () {
       console.log(
         "La requête s'est terminée en échec. Infos : " + JSON.stringify(error)
       );
-    })
-    .always(function () {
-      console.log("Requête effectuée3");
     });
+
+  checkSession();
 });
